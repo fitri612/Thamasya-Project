@@ -1,24 +1,20 @@
 import React from 'react';
 import {View, StyleSheet, ScrollView, Text} from 'react-native';
-import { DummyIc} from '../../../assets';
-import TextHome from '../../atoms/TextHome';
+import {DummyIc} from '../../../assets';
 import TourListCard from '../TourListCard';
 
 const HomeTabSection = () => {
   return (
     <View style={{paddingTop: 8}}>
-      <TextHome />
       <ScrollView vertical>
-        <TourListCard image={DummyIc} />
-        <TourListCard image={DummyIc} />
-        <TourListCard image={DummyIc} />
-        <TourListCard image={DummyIc} />
-        <TourListCard image={DummyIc} />
+        <TourListCard name={'Pending'} />
+        <TourListCard name={'In Progress'} />
+        <TourListCard name={'Completed'} />
+        <TourListCard name={'Pending'} />
       </ScrollView>
     </View>
   );
 };
 
 export default HomeTabSection;
-const styles = StyleSheet.create({
-});
+const styles = StyleSheet.create({});

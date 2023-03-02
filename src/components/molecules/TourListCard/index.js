@@ -1,37 +1,14 @@
 import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import { IcClock } from '../../../assets';
-import { Gap } from '../../atoms';
+import {IcClock} from '../../../assets';
+import {Gap} from '../../atoms';
 
-const TourListCard = ({image}) => {
+const TourListCard = ({image, name}) => {
   return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      style={styles.container}>
-      <Image
-        source={image}
-        style={styles.image}
-      />
+    <TouchableOpacity activeOpacity={0.7} style={styles.container}>
+      <Text style={styles.dot}>•</Text>
       <View style={styles.contentText}>
-        <Text
-          style={styles.textTitle}>
-          Design Task Card
-        </Text>
-        <Text
-          style={styles.textLocation}>
-          At Prospyr we are looking for a UI/UX Designer to join our team.
-        </Text>
-        <View style={styles.iconCard}>
-          <View style={styles.icCardChil}>
-            <IcClock />
-            <Text style={styles.text}>08.00 AM - 12.00 AM</Text>
-          </View>
-          <Gap width={10} />
-          <View style={styles.icCardChil}>
-            <IcClock />
-            <Text style={styles.text}>12/12/2022</Text>
-          </View>
-        </View>
+        <Text style={styles.textTitle}>{name}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -52,6 +29,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginStart: 16,
     marginEnd: 16,
+    width: 450,
+    height: 100,
+  },
+  dot: {
+    width: 15,
+    height: 15,
+    borderRadius: 15,
+    backgroundColor: '#F9A826',
+    marginRight: 16,
   },
   image: {
     overflow: 'hidden',
@@ -60,7 +46,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
   contentText: {
-    flex: 1
+    flex: 1,
   },
   textTitle: {
     fontFamily: 'Raleway-SemiBold',
@@ -87,5 +73,4 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     fontSize: 10,
   },
-
 });

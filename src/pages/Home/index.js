@@ -1,4 +1,4 @@
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import React from 'react';
 import {Gap, HomeTabSection, HomeWelcome, TourCard} from '../../components';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -10,32 +10,54 @@ import {
   TourDummy3,
 } from '../../assets';
 import {TouchableOpacity} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Home = ({navigation}) => {
   return (
-    <View style={styles.page}>
-      <HomeWelcome type={'home'} />
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <View style={styles.TourCardContainer}>
-          <Gap width={5} />
-          <TourCard
-            icon={TourDummy1}
-            title={'todo'}
-            onPress={() => navigation.navigate('System')}
-          />
-          <TourCard
-            icon={TourDummy2}
-            title={'In Progress'}
-            onPress={() => navigation.navigate('System')}
-          />
-          <TourCard
-            icon={TourDummy}
-            title={'Completed'}
-            onPress={() => navigation.navigate('System')}
-          />
-          <Gap width={5} />
-        </View>
-      </ScrollView>
+    <SafeAreaView style={styles.page}>
+      <HomeWelcome />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+        <TourCard
+          icon={
+            'https://usdvexperts.com/wp-content/uploads/2016/02/c286ca98c6c79cf50000cab7a5344393-300x295.png'
+          }
+          title={'08'}
+          desc={'Pending'}
+          onPress={() => navigation.navigate('System')}
+        />
+        <TourCard
+          icon={
+            'https://static.vecteezy.com/system/resources/thumbnails/006/900/704/small/green-tick-checkbox-illustration-isolated-on-white-background-free-vector.jpg'
+          }
+          title={'10'}
+          desc={'Completed'}
+          onPress={() => navigation.navigate('System')}
+        />
+      </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+        <TourCard
+          icon={'https://cdn-icons-png.flaticon.com/512/4909/4909989.png'}
+          title={'15'}
+          desc={'In Progress'}
+          onPress={() => navigation.navigate('System')}
+        />
+        <TourCard
+          icon={
+            'https://www.pngarts.com/files/11/Silhouette-Youtube-Bell-Icon-PNG-Pic.png'
+          }
+          title={'20'}
+          desc={'Overdue'}
+          onPress={() => navigation.navigate('System')}
+        />
+      </View>
       <View style={styles.tabContainer}>
         <HomeTabSection />
       </View>
@@ -43,10 +65,11 @@ const Home = ({navigation}) => {
         <TouchableOpacity
           style={styles.add}
           onPress={() => navigation.navigate('ToDo')}>
-          <IcAdd />
+          {/* <IcAdd /> */}
+          <Text>Add</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -82,7 +105,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 30,
     left: 200,
-    width: 20,
+    width: 100,
     height: 50,
+    backgroundColor: '#F2F2F2',
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
