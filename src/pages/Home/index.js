@@ -2,8 +2,14 @@ import {View, StyleSheet} from 'react-native';
 import React from 'react';
 import {Gap, HomeTabSection, HomeWelcome, TourCard} from '../../components';
 import {ScrollView} from 'react-native-gesture-handler';
-import {IcAdd, TourDummy, TourDummy1, TourDummy2, TourDummy3} from '../../assets';
-import { TouchableOpacity } from 'react-native';
+import {
+  IcAdd,
+  TourDummy,
+  TourDummy1,
+  TourDummy2,
+  TourDummy3,
+} from '../../assets';
+import {TouchableOpacity} from 'react-native';
 
 const Home = ({navigation}) => {
   return (
@@ -12,9 +18,21 @@ const Home = ({navigation}) => {
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <View style={styles.TourCardContainer}>
           <Gap width={5} />
-          <TourCard icon={TourDummy1} title={'todo'} onPress={() => navigation.navigate('') }/>
-          <TourCard icon={TourDummy2} title={'In Progress'}  onPress={() => navigation.navigate('') } />
-          <TourCard icon={TourDummy} title={'Completed'}  onPress={() => navigation.navigate('') } />
+          <TourCard
+            icon={TourDummy1}
+            title={'todo'}
+            onPress={() => navigation.navigate('System')}
+          />
+          <TourCard
+            icon={TourDummy2}
+            title={'In Progress'}
+            onPress={() => navigation.navigate('System')}
+          />
+          <TourCard
+            icon={TourDummy}
+            title={'Completed'}
+            onPress={() => navigation.navigate('System')}
+          />
           <Gap width={5} />
         </View>
       </ScrollView>
@@ -22,7 +40,9 @@ const Home = ({navigation}) => {
         <HomeTabSection />
       </View>
       <View style={styles.addContent}>
-        <TouchableOpacity style={styles.add} onPress={() => navigation.navigate('System') }>
+        <TouchableOpacity
+          style={styles.add}
+          onPress={() => navigation.navigate('ToDo')}>
           <IcAdd />
         </TouchableOpacity>
       </View>

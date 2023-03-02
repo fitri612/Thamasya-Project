@@ -10,6 +10,7 @@ import {
 
 import {BottomNavigator} from '../components';
 import System from '../components/molecules/System';
+import ToDo from '../pages/Todo';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -46,6 +47,12 @@ const Router = () => {
       <Stack.Screen
         name="System"
         component={System}
+        options={{headerShown: false}}
+      />
+
+      <Stack.Screen
+        name="ToDo"
+        component={ToDo}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

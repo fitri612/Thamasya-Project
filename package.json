@@ -19,6 +19,7 @@
     "react": "18.1.0",
     "react-native": "0.70.1",
     "react-native-app-intro-slider": "^4.0.4",
+    "react-native-async-storage": "^0.0.1",
     "react-native-dropdown-picker": "^5.4.2",
     "react-native-gesture-handler": "^2.6.1",
     "react-native-image-slider-box": "^2.0.6",

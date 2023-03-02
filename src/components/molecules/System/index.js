@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {IcBack} from '../../../assets';
 import {Button, Gap} from '../../atoms';
+import {useNavigation} from '@react-navigation/native';
 
 export default class System extends React.Component {
   constructor() {
@@ -60,12 +61,13 @@ export default class System extends React.Component {
       tempText: '',
     });
   }
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.textView}>
           <View style={styles.back}>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
               <IcBack />
             </TouchableOpacity>
           </View>
@@ -93,7 +95,7 @@ export default class System extends React.Component {
           </View>
           <View style={styles.stybtn}>
             <Button text="Add" onPress={this.addItem} />
-            <Gap height={10}/>
+            <Gap height={10} />
             <Button text="OK" onPress={() => this.noUpdate()} />
           </View>
 
@@ -133,8 +135,6 @@ const styles = StyleSheet.create({
     height: 80,
     flexDirection: 'row',
     justifyContent: 'space-between',
-
-
   },
   inputBox: {
     backgroundColor: 'white',
