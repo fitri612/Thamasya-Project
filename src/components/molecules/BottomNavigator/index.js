@@ -133,10 +133,7 @@ const BottomNavigator = ({state, descriptors, navigation}) => {
         </View>
       </Modal>
 
-      <TouchableOpacity
-        onPress={() => {
-          setShowModal(!showModal);
-        }}>
+      <TouchableOpacity>
         <ProfileOff />
       </TouchableOpacity>
     </View>

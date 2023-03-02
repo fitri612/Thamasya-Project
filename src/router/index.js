@@ -25,12 +25,12 @@ const MainApp = () => {
         component={Search}
         options={{headerShown: false}}
       />
-      <Tab.Screen name="Map" component={Map} options={{headerShown: false}} />
+      {/* <Tab.Screen name="Map" component={Map} options={{headerShown: false}} />
       <Tab.Screen
         name="Ticket"
         component={Ticket}
         options={{headerShown: false}}
-      />
+      /> */}
     </Tab.Navigator>
   );
 };
