@@ -14,7 +14,7 @@ import {TouchableOpacity} from 'react-native';
 const Home = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <HomeWelcome />
+      <HomeWelcome type={'home'} />
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <View style={styles.TourCardContainer}>
           <Gap width={5} />

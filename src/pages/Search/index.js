@@ -1,38 +1,56 @@
 import {View, StyleSheet} from 'react-native';
 import React from 'react';
-import {Gap, HomeTabSection, HomeWelcome, TourCard, TourCard2} from '../../components';
+import {Gap, HomeTabSection, HomeWelcome, TourCard} from '../../components';
 import {ScrollView} from 'react-native-gesture-handler';
-import {ProfileDummy, TourDummy1, TourDummy2, TourDummy3} from '../../assets';
-import SearchBarHome from '../../components/atoms/SearchIcon';
-import TextHome2 from '../../components/atoms/TextHome2';
+import {
+  IcAdd,
+  TourDummy,
+  TourDummy1,
+  TourDummy2,
+  TourDummy3,
+} from '../../assets';
+import {TouchableOpacity} from 'react-native';
 
-const Home = ({navigation}) => {
+const Search = ({navigation}) => {
   return (
     <View style={styles.page}>
       <HomeWelcome />
-      <View style={{marginHorizontal: 12, marginVertical: 20}}>
-        <SearchBarHome placeholder="Cari destinasimu ?" />
-      </View>
-      <Gap width={100} />
-      <TextHome2 />
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <View style={styles.TourCardContainer}>
           <Gap width={5} />
-          <TourCard2 images={ProfileDummy} onPress={() => navigation.navigate('') }/>
-          <TourCard2 images={ProfileDummy} onPress={() => navigation.navigate('') } />
-          <TourCard2 images={ProfileDummy} onPress={() => navigation.navigate('') } />
-          <TourCard2 images={ProfileDummy} onPress={() => navigation.navigate('') } />
+          <TourCard
+            icon={TourDummy1}
+            title={'todo'}
+            onPress={() => navigation.navigate('System')}
+          />
+          <TourCard
+            icon={TourDummy2}
+            title={'In Progress'}
+            onPress={() => navigation.navigate('System')}
+          />
+          <TourCard
+            icon={TourDummy}
+            title={'Completed'}
+            onPress={() => navigation.navigate('System')}
+          />
           <Gap width={5} />
         </View>
       </ScrollView>
       <View style={styles.tabContainer}>
         <HomeTabSection />
       </View>
+      <View style={styles.addContent}>
+        <TouchableOpacity
+          style={styles.add}
+          onPress={() => navigation.navigate('ToDo')}>
+          <IcAdd />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
-export default Home;
+export default Search;
 
 const styles = StyleSheet.create({
   page: {
@@ -55,5 +73,16 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     marginBottom: 25,
     marginTop: 25,
+  },
+  addContent: {
+    width: 50,
+    height: 50,
+  },
+  add: {
+    position: 'absolute',
+    bottom: 30,
+    left: 200,
+    width: 20,
+    height: 50,
   },
 });
